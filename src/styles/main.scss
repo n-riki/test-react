@@ -1,18 +1,11 @@
-@import "vars";
-@import "layouts/main";
-@import "common/general";
-@import "ui/btn";
-@import "ui/menu";
+@import "pagination";
+@import "loader";
+@import "table";
 
 body {
-  background: $main_bg;
-  min-width: 1280px;
-  overflow-x: auto;
+  background: #F4F7FC;
 }
 
-html, body, #root {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  width: 100%;
+.pad10 {
+  padding: 10px;
 }

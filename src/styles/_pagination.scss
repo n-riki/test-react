@@ -1,0 +1,21 @@
+.pagination {
+  justify-content: flex-end;
+  li {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    a {
+      padding: 3px 8px;
+      outline: none;
+    }
+
+    &.active, &:hover {
+      background: #007bff;
+      color: #fff;
+    }
+  }
+
+  &--disabled {
+    pointer-events: none;
+  }
+}
