@@ -5,8 +5,9 @@
     border-radius: 4px;
     cursor: pointer;
     a {
-      padding: 3px 8px;
+      padding: 6px 14px;
       outline: none;
+      display: block;
     }
 
     &.active, &:hover {

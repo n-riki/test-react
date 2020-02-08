@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getTableData, cancel } from '../../utils/requestServices';
+import { getTableData, cancel } from '../../services/requestServices';
 import { tableColumns } from './constants';
 import TableData from './TableData';
 import Filters from './Filters';
@@ -68,7 +68,7 @@ class Task extends Component {
   }
 
   render() {
-    const { isLoading } = this.state;
+    const { isLoading, totalCount } = this.state;
 
     return (
       <div className="main pad10">
@@ -77,7 +77,7 @@ class Task extends Component {
             <Col md={6}>
               <Filters submitFilters={this.submitFilters} cancelRequest={this.cancelRequest} />
             </Col>
-            {this.state.data.length
+            {totalCount > 0
               ? <Col md={6}>
                 <ReactPaginate
                     previousLabel={'prev'}
@@ -100,6 +100,7 @@ class Task extends Component {
               data={this.state.data}
               tableColumns={tableColumns}
               isLoading={isLoading}
+              totalCount={totalCount}
           />
         </div>
       </div>

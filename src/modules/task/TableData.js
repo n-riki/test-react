@@ -3,7 +3,16 @@ import { Table } from 'react-bootstrap';
 import Loader from './Loader';
 
 const TableData = (props) => {
-  const { tableColumns, data, isLoading } = props;
+  const { tableColumns, data, isLoading, totalCount } = props;
+
+  if(totalCount < 0) {
+    return (<div className="table-view">Please, start search { isLoading && <Loader /> }</div>)
+  }
+
+  if(totalCount === 0) {
+    return (<div className="table-view">No data! { isLoading && <Loader /> }</div>)
+  }
+
   return (
     <div className="table-view">
     { isLoading && <Loader /> }
@@ -26,5 +35,9 @@ const TableData = (props) => {
     </div>
   );
 }
+
+TableData.defaultProps = {
+  tableColumns: [],
+};
 
 export default TableData;
